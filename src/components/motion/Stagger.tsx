@@ -5,11 +5,11 @@ import { Children } from "react";
 
 /**
  * Stagger wraps each child in its own motion.div that animates with sequential delay.
- * This avoids nested motion variant inheritance conflicts.
+ * Triggers as soon as element enters viewport with margin so users never see blank cards.
  */
 export function Stagger({
   children,
-  staggerDelay = 0.08,
+  staggerDelay = 0.06,
   className,
   baseDelay = 0,
 }: {
@@ -26,11 +26,11 @@ export function Stagger({
       {arr.map((child, i) => (
         <motion.div
           key={i}
-          initial={reduce ? false : { opacity: 0, y: 24 }}
+          initial={reduce ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1, margin: "-20px" }}
+          viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
           transition={{
-            duration: 0.6,
+            duration: 0.5,
             ease: [0.22, 1, 0.36, 1],
             delay: baseDelay + i * staggerDelay,
           }}
@@ -42,7 +42,6 @@ export function Stagger({
   );
 }
 
-// Backward compat — these are now no-ops since Stagger handles wrapping
 export const staggerItem = {};
 export function StaggerItem({
   children,

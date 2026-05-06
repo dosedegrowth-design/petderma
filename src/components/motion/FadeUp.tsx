@@ -13,7 +13,7 @@ type Props = HTMLMotionProps<"div"> & {
 export function FadeUp({
   children,
   delay = 0,
-  y = 32,
+  y = 24,
   once = true,
   immediate = false,
   className,
@@ -29,14 +29,15 @@ export function FadeUp({
     : {
         initial: reduce ? false : { opacity: 0, y },
         whileInView: { opacity: 1, y: 0 },
-        viewport: { once, amount: 0.15, margin: "-40px" } as const,
+        // Trigger animation early — even when element is just below viewport
+        viewport: { once, amount: 0, margin: "200px 0px 200px 0px" } as const,
       };
 
   return (
     <motion.div
       className={className}
       {...animProps}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay }}
       {...rest}
     >
       {children}
