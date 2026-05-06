@@ -121,7 +121,7 @@ export default async function UnidadePage({
       {/* Galeria de fotos da unidade */}
       <section className="bg-gradient-to-b from-white to-brand-violet-soft py-12 md:py-16">
         <Container size="lg">
-          <FadeUp className="mb-8 max-w-3xl">
+          <FadeUp className="mb-8 max-w-3xl text-center lg:text-left">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Conheça a unidade
             </span>
@@ -232,7 +232,7 @@ export default async function UnidadePage({
       {/* Como chegar */}
       <section className="bg-brand-violet-soft py-16 md:py-20">
         <Container size="lg">
-          <FadeUp className="mb-10 max-w-3xl">
+          <FadeUp className="mb-10 max-w-3xl text-center lg:text-left">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Como chegar
             </span>
@@ -293,7 +293,7 @@ export default async function UnidadePage({
       {/* Outras unidades */}
       <section className="py-16 md:py-20">
         <Container size="lg">
-          <FadeUp className="mb-10 max-w-3xl">
+          <FadeUp className="mb-10 max-w-3xl text-center lg:text-left">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Outras unidades
             </span>

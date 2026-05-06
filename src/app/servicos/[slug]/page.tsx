@@ -77,8 +77,8 @@ export default async function ServicoPage({
           </nav>
 
           <div className="grid gap-12 pb-16 lg:grid-cols-12 lg:gap-16 lg:pb-20">
-            <div className="lg:col-span-7">
-              <FadeUp>
+            <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
+              <FadeUp className="flex flex-col items-center lg:items-start">
                 <div className="inline-flex items-center gap-2 rounded-pill border border-brand-primary/10 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-brand-primary shadow-soft backdrop-blur-sm">
                   <Sparkles className="size-3 text-brand-accent" />
                   {servico.categoria === "condicao"
@@ -90,18 +90,18 @@ export default async function ServicoPage({
                     : "Tratamento"}
                 </div>
 
-                <h1 className="mt-5 text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-brand-primary md:text-5xl lg:text-6xl">
+                <h1 className="mt-5 text-balance font-display text-3xl font-bold leading-[1.1] tracking-tight text-brand-primary sm:text-4xl md:text-5xl lg:text-6xl">
                   {servico.hero}
                 </h1>
               </FadeUp>
 
               <FadeUp delay={0.1}>
-                <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-brand-secondary">
+                <p className="mx-auto mt-6 max-w-xl text-balance text-base leading-relaxed text-brand-secondary sm:text-lg lg:mx-0">
                   {servico.resumo}
                 </p>
               </FadeUp>
 
-              <FadeUp delay={0.2} className="mt-8 flex flex-wrap gap-3">
+              <FadeUp delay={0.2} className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
                 <Magnetic>
                   <WhatsAppCTA
                     source={`servico-${servico.slug}-hero`}
@@ -166,7 +166,7 @@ export default async function ServicoPage({
         <section id="detalhes" className="bg-white py-16 md:py-20">
           <Container size="lg">
             <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-              <FadeUp className="lg:col-span-5">
+              <FadeUp className="text-center lg:col-span-5 lg:text-left">
                 <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
                   Sintomas
                 </span>
@@ -200,7 +200,7 @@ export default async function ServicoPage({
       <section id={!servico.sintomas ? "detalhes" : undefined} className="bg-brand-violet-soft py-16 md:py-20">
         <Container size="lg">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <FadeUp className="lg:col-span-5">
+            <FadeUp className="text-center lg:col-span-5 lg:text-left">
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
                 {servico.categoria === "condicao" ? "Como investigamos" : "Como é feito"}
               </span>
@@ -237,7 +237,7 @@ export default async function ServicoPage({
       <section className="bg-brand-primary py-16 text-white md:py-20">
         <Container size="lg">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <FadeUp className="lg:col-span-5">
+            <FadeUp className="text-center lg:col-span-5 lg:text-left">
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
                 Benefícios
               </span>
@@ -269,7 +269,7 @@ export default async function ServicoPage({
       {/* FAQ */}
       <section className="py-16 md:py-20">
         <Container size="default">
-          <FadeUp className="mb-10 max-w-3xl">
+          <FadeUp className="mb-10 max-w-3xl text-center lg:text-left">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Perguntas frequentes
             </span>
@@ -345,7 +345,7 @@ export default async function ServicoPage({
       {/* Outros serviços */}
       <section className="py-16 md:py-20">
         <Container size="lg">
-          <FadeUp className="mb-10 max-w-3xl">
+          <FadeUp className="mb-10 max-w-3xl text-center lg:text-left">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Você também pode se interessar por
             </span>

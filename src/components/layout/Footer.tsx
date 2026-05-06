@@ -17,10 +17,10 @@ export function Footer() {
         className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-brand-lavender/15 blur-3xl"
       />
 
-      <Container size="lg" className="relative py-20">
-        <div className="grid gap-12 lg:grid-cols-12">
+      <Container size="lg" className="relative py-16 md:py-20">
+        <div className="grid gap-12 text-center lg:grid-cols-12 lg:text-left">
           {/* Brand */}
-          <div className="lg:col-span-4">
+          <div className="flex flex-col items-center lg:col-span-4 lg:items-start">
             <Image
               src="/brand/logo.png"
               alt={SITE.name}
@@ -49,17 +49,17 @@ export function Footer() {
                 <div key={u.slug} className="text-sm">
                   <p className="text-base font-semibold text-white">{u.nome}</p>
                   <div className="mt-2 space-y-1.5 text-white/65">
-                    <p className="flex items-start gap-2">
+                    <p className="flex items-start justify-center gap-2 lg:justify-start">
                       <MapPin className="mt-0.5 size-3.5 shrink-0 text-brand-accent" />
                       <span>{u.endereco}</span>
                     </p>
-                    <p className="flex items-center gap-2">
+                    <p className="flex items-center justify-center gap-2 lg:justify-start">
                       <Phone className="size-3.5 shrink-0 text-brand-accent" />
                       <a href={`tel:+${u.telefone}`} className="hover:text-white">
                         {u.telefoneDisplay}
                       </a>
                     </p>
-                    <p className="flex items-start gap-2">
+                    <p className="flex items-start justify-center gap-2 lg:justify-start">
                       <Clock className="mt-0.5 size-3.5 shrink-0 text-brand-accent" />
                       <span>{u.horario.semana}</span>
                     </p>
@@ -86,7 +86,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 border-t border-white/10 pt-8">
-          <div className="flex flex-col items-start justify-between gap-4 text-xs text-white/50 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-center justify-between gap-4 text-center text-xs text-white/50 sm:flex-row sm:items-center sm:text-left">
             <p>© {new Date().getFullYear()} {SITE.name}. Todos os direitos reservados.</p>
             <p>Responsável Técnico: Dr. Douglas Bessa — CRMV-SP</p>
           </div>

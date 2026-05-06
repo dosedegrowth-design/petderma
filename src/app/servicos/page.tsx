@@ -57,7 +57,7 @@ export default function ServicosPage() {
               { icon: ShieldCheck, valor: "12+", label: "Anos de experiência" },
               { icon: Heart, valor: "3.500+", label: "Pets tratados" },
             ].map((s) => (
-              <div key={s.label} className="flex items-center gap-4">
+              <div key={s.label} className="flex items-center justify-center gap-4 sm:justify-start">
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-accent/10 text-brand-accent">
                   <s.icon className="size-6" strokeWidth={1.75} />
                 </div>
@@ -105,7 +105,7 @@ export default function ServicosPage() {
             className={`scroll-mt-32 py-16 md:py-20 ${bg}`}
           >
             <Container size="lg">
-              <FadeUp className="mb-12 max-w-3xl">
+              <FadeUp className="mb-12 max-w-3xl text-center lg:text-left">
                 <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
                   {cat.subtitulo}
                 </span>

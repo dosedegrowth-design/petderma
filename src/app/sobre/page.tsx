@@ -64,7 +64,7 @@ export default function SobrePage() {
       <section className="py-16 md:py-20">
         <Container size="lg">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <FadeUp className="lg:col-span-5">
+            <FadeUp className="flex justify-center lg:col-span-5 lg:justify-start">
               <div className="relative">
                 <div className="absolute -left-4 -top-4 h-full w-full rounded-[2rem] bg-brand-accent" />
                 <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] shadow-float">
@@ -79,7 +79,7 @@ export default function SobrePage() {
               </div>
             </FadeUp>
 
-            <div className="lg:col-span-7">
+            <div className="text-center lg:col-span-7 lg:text-left">
               <FadeUp>
                 <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
                   Nossa história
@@ -136,7 +136,7 @@ export default function SobrePage() {
       {/* Valores */}
       <section className="py-16 md:py-20">
         <Container size="lg">
-          <FadeUp className="mb-12 max-w-3xl">
+          <FadeUp className="mb-12 max-w-3xl text-center lg:text-left">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Nossos valores
             </span>

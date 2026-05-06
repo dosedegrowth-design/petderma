@@ -279,7 +279,7 @@ export default async function BlogPostPage({
       {related.length > 0 && (
         <section className="bg-brand-violet-soft py-16 md:py-20">
           <Container size="lg">
-            <FadeUp className="mb-10 max-w-3xl">
+            <FadeUp className="mb-10 max-w-3xl text-center lg:text-left">
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
                 Continue lendo
               </span>
