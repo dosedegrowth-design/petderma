@@ -148,13 +148,7 @@ export function Hero() {
 
           {/* Image */}
           <div className="relative lg:col-span-5">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94, rotate: -2 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
-              transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative mx-auto aspect-[4/5] w-full max-w-[420px]"
-            >
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px]">
               <div className="absolute inset-0 -rotate-3 rounded-[2rem] bg-brand-accent" />
               <div className="absolute inset-0 rotate-2 rounded-[2rem] bg-brand-lavender opacity-40" />
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] shadow-float">
@@ -169,11 +163,7 @@ export function Hero() {
               </div>
 
               {/* Floating card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
-                transition={{ delay: 0.9, duration: 0.5 }}
+              <div
                 className="absolute -bottom-6 -left-4 max-w-[200px] rounded-2xl bg-white p-3.5 shadow-card sm:-left-8"
               >
                 <div className="flex items-center gap-3">
@@ -187,19 +177,15 @@ export function Hero() {
                     <p className="text-sm font-bold text-brand-primary">em até 24h</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Floating badge top */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
-                transition={{ delay: 1.1, duration: 0.4, type: "spring" }}
+              <div
                 className="absolute -right-3 -top-3 flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary text-center text-[9px] font-bold uppercase leading-tight tracking-wider text-white shadow-card sm:-right-4 sm:-top-4 sm:h-20 sm:w-20 sm:text-[10px]"
               >
                 CRMV<br />SP
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </Container>
