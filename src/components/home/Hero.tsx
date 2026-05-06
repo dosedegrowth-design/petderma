@@ -46,7 +46,7 @@ export function Hero() {
 
       <Container size="lg" className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="text-center lg:col-span-7 lg:text-left">
+          <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
