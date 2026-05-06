@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
 import { Quote, Star } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FadeUp } from "@/components/motion/FadeUp";
-import { Stagger, staggerItem } from "@/components/motion/Stagger";
+import { Stagger } from "@/components/motion/Stagger";
 
 const DEPOIMENTOS = [
   {
@@ -53,9 +52,8 @@ export function Depoimentos() {
           className="mt-10 grid gap-6 md:grid-cols-3"
         >
           {DEPOIMENTOS.map((d) => (
-            <motion.article
+            <article
               key={d.nome}
-              variants={staggerItem}
               className="group relative flex h-full flex-col rounded-[1.75rem] bg-white p-8 shadow-soft ring-1 ring-brand-primary/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-card"
             >
               <Quote className="size-10 text-brand-accent/30" strokeWidth={2} />
@@ -85,7 +83,7 @@ export function Depoimentos() {
                   <p className="text-xs text-brand-secondary">Tutora de {d.pet}</p>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </Stagger>
       </Container>

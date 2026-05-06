@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react";
 import { Hand, Ear, Droplet, Sparkles, Wind, Bug, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FadeUp } from "@/components/motion/FadeUp";
-import { Stagger, staggerItem } from "@/components/motion/Stagger";
+import { Stagger } from "@/components/motion/Stagger";
 
 const ICONS = { Hand, Ear, Droplet, Sparkles, Wind, Bug };
 
@@ -43,34 +42,33 @@ export function Problemas() {
           {PROBLEMAS.map((p) => {
             const Icon = ICONS[p.icon];
             return (
-              <motion.div key={p.titulo} variants={staggerItem}>
-                <Link
-                  href="#casos"
-                  className="group relative block overflow-hidden rounded-[1.75rem] bg-white p-7 shadow-soft ring-1 ring-brand-primary/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-card"
-                >
-                  {/* Background fill on hover */}
-                  <div
-                    className={`absolute inset-0 ${p.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
-                  />
-                  <div className="relative">
-                    <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl ${p.color} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}>
-                      <Icon className={`size-7 ${p.iconColor}`} strokeWidth={1.75} />
-                    </div>
-
-                    <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-brand-primary">
-                      {p.titulo}
-                    </h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-brand-secondary">
-                      {p.descricao}
-                    </p>
-
-                    <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary opacity-60 transition-opacity group-hover:opacity-100">
-                      Saber mais
-                      <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:rotate-12 group-hover:translate-x-0.5" />
-                    </div>
+              <Link
+                key={p.titulo}
+                href="#casos"
+                className="group relative block overflow-hidden rounded-[1.75rem] bg-white p-7 shadow-soft ring-1 ring-brand-primary/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-card"
+              >
+                {/* Background fill on hover */}
+                <div
+                  className={`absolute inset-0 ${p.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+                />
+                <div className="relative">
+                  <div className={`inline-flex h-14 w-14 items-center justify-center rounded-2xl ${p.color} transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6`}>
+                    <Icon className={`size-7 ${p.iconColor}`} strokeWidth={1.75} />
                   </div>
-                </Link>
-              </motion.div>
+
+                  <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-brand-primary">
+                    {p.titulo}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-brand-secondary">
+                    {p.descricao}
+                  </p>
+
+                  <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary opacity-60 transition-opacity group-hover:opacity-100">
+                    Saber mais
+                    <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:rotate-12 group-hover:translate-x-0.5" />
+                  </div>
+                </div>
+              </Link>
             );
           })}
         </Stagger>

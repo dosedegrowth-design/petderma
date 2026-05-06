@@ -1,11 +1,10 @@
 "use client";
 
-import { motion } from "motion/react";
 import { FlaskConical, Microscope, Snowflake, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { TiltCard } from "@/components/motion/TiltCard";
-import { Stagger, staggerItem } from "@/components/motion/Stagger";
+import { Stagger } from "@/components/motion/Stagger";
 
 const ITEMS = [
   {
@@ -61,30 +60,29 @@ export function Diferenciais() {
           className="mt-12 grid gap-6 sm:grid-cols-2"
         >
           {ITEMS.map((item) => (
-            <motion.div key={item.titulo} variants={staggerItem}>
-              <TiltCard
-                intensity={5}
-                className="group relative h-full overflow-hidden rounded-[1.75rem] bg-white p-8 shadow-soft ring-1 ring-brand-primary/5 transition-shadow duration-500 hover:shadow-card"
-              >
-                {/* Accent glow */}
-                <div
-                  className={`absolute -right-20 -top-20 h-48 w-48 rounded-full ${item.accent} opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-30`}
-                />
+            <TiltCard
+              key={item.titulo}
+              intensity={5}
+              className="group relative h-full overflow-hidden rounded-[1.75rem] bg-white p-8 shadow-soft ring-1 ring-brand-primary/5 transition-shadow duration-500 hover:shadow-card"
+            >
+              {/* Accent glow */}
+              <div
+                className={`absolute -right-20 -top-20 h-48 w-48 rounded-full ${item.accent} opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-30`}
+              />
 
-                <div className="relative">
-                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-primary text-brand-accent transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
-                    <item.icon className="size-7" strokeWidth={1.75} />
-                  </div>
-
-                  <h3 className="mt-6 font-display text-2xl font-bold tracking-tight text-brand-primary">
-                    {item.titulo}
-                  </h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-brand-secondary">
-                    {item.descricao}
-                  </p>
+              <div className="relative">
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-primary text-brand-accent transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                  <item.icon className="size-7" strokeWidth={1.75} />
                 </div>
-              </TiltCard>
-            </motion.div>
+
+                <h3 className="mt-6 font-display text-2xl font-bold tracking-tight text-brand-primary">
+                  {item.titulo}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-brand-secondary">
+                  {item.descricao}
+                </p>
+              </div>
+            </TiltCard>
           ))}
         </Stagger>
       </Container>

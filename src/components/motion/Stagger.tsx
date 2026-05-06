@@ -1,60 +1,55 @@
 "use client";
 
-import { motion, type Variants } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
+import { Children } from "react";
 
+/**
+ * Stagger wraps each child in its own motion.div that animates with sequential delay.
+ * This avoids nested motion variant inheritance conflicts.
+ */
 export function Stagger({
   children,
   staggerDelay = 0.08,
   className,
-  immediate = false,
+  baseDelay = 0,
 }: {
   children: React.ReactNode;
   staggerDelay?: number;
   className?: string;
-  immediate?: boolean;
+  baseDelay?: number;
 }) {
-  const variants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: staggerDelay } },
-  };
-
-  const animProps = immediate
-    ? { initial: "hidden" as const, animate: "visible" as const }
-    : {
-        initial: "hidden" as const,
-        whileInView: "visible" as const,
-        viewport: { once: true, amount: 0.15, margin: "-40px" } as const,
-      };
+  const reduce = useReducedMotion();
+  const arr = Children.toArray(children);
 
   return (
-    <motion.div className={className} {...animProps} variants={variants}>
-      {children}
-    </motion.div>
+    <div className={className}>
+      {arr.map((child, i) => (
+        <motion.div
+          key={i}
+          initial={reduce ? false : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1, margin: "-20px" }}
+          transition={{
+            duration: 0.6,
+            ease: [0.22, 1, 0.36, 1],
+            delay: baseDelay + i * staggerDelay,
+          }}
+        >
+          {child}
+        </motion.div>
+      ))}
+    </div>
   );
 }
 
-export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-  },
-};
-
+// Backward compat — these are now no-ops since Stagger handles wrapping
+export const staggerItem = {};
 export function StaggerItem({
   children,
   className,
-  as: Tag = "div",
 }: {
   children: React.ReactNode;
   className?: string;
-  as?: "div" | "li" | "article" | "section";
 }) {
-  const MotionTag = motion[Tag];
-  return (
-    <MotionTag className={className} variants={staggerItem}>
-      {children}
-    </MotionTag>
-  );
+  return <div className={className}>{children}</div>;
 }

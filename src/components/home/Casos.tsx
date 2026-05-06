@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { FadeUp } from "@/components/motion/FadeUp";
-import { Stagger, staggerItem } from "@/components/motion/Stagger";
+import { Stagger } from "@/components/motion/Stagger";
 
 const CASOS = [
   {
@@ -60,9 +59,8 @@ export function Casos() {
           className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           {CASOS.map((caso) => (
-            <motion.article
+            <article
               key={caso.condicao + caso.pet}
-              variants={staggerItem}
               className="group relative overflow-hidden rounded-[1.5rem] bg-brand-violet-soft"
             >
               <div className="relative aspect-[3/4] overflow-hidden">
@@ -87,7 +85,7 @@ export function Casos() {
                   <p className="mt-1 text-sm text-white/80">{caso.pet}</p>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </Stagger>
 
