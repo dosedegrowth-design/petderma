@@ -57,11 +57,12 @@ export const UNIDADES = [
 export type UnidadeSlug = (typeof UNIDADES)[number]["slug"];
 
 export const NAV_ITEMS = [
-  { label: "Quem Somos", href: "#sobre" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Casos", href: "#casos" },
-  { label: "Unidades", href: "#unidades" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "Serviços", href: "/servicos" },
+  { label: "Casos", href: "/casos" },
+  { label: "Unidades", href: "/unidades" },
+  { label: "Equipe", href: "/equipe" },
+  { label: "Contato", href: "/contato" },
 ] as const;
 
 export const PROBLEMAS = [

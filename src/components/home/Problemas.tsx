@@ -9,12 +9,12 @@ import { Stagger } from "@/components/motion/Stagger";
 const ICONS = { Hand, Ear, Droplet, Sparkles, Wind, Bug };
 
 const PROBLEMAS = [
-  { icon: "Hand" as const, titulo: "Coceira excessiva", descricao: "Pet se coça ou lambe sem parar?", color: "bg-brand-cream", iconColor: "text-brand-coral" },
-  { icon: "Ear" as const, titulo: "Otite recorrente", descricao: "Infecções de ouvido que voltam?", color: "bg-brand-mint", iconColor: "text-brand-accent" },
-  { icon: "Droplet" as const, titulo: "Manchas e feridas", descricao: "Lesões na pele que não saram", color: "bg-brand-violet-soft", iconColor: "text-brand-lavender" },
-  { icon: "Sparkles" as const, titulo: "Queda de pelo", descricao: "Falhas no pelo ou pelagem opaca", color: "bg-brand-sky", iconColor: "text-brand-primary" },
-  { icon: "Wind" as const, titulo: "Mau cheiro", descricao: "Odor persistente na pele ou orelhas", color: "bg-brand-blush", iconColor: "text-brand-coral" },
-  { icon: "Bug" as const, titulo: "Sarna e parasitas", descricao: "Pulgas, ácaros e infestações", color: "bg-brand-cream-2", iconColor: "text-brand-primary" },
+  { icon: "Hand" as const, titulo: "Coceira excessiva", descricao: "Pet se coça ou lambe sem parar?", color: "bg-brand-cream", iconColor: "text-brand-coral", href: "/servicos/alergia-atopica" },
+  { icon: "Ear" as const, titulo: "Otite recorrente", descricao: "Infecções de ouvido que voltam?", color: "bg-brand-mint", iconColor: "text-brand-accent", href: "/servicos/otite-cronica" },
+  { icon: "Droplet" as const, titulo: "Manchas e feridas", descricao: "Lesões na pele que não saram", color: "bg-brand-violet-soft", iconColor: "text-brand-lavender", href: "/servicos/dermatite-bacteriana" },
+  { icon: "Sparkles" as const, titulo: "Queda de pelo", descricao: "Falhas no pelo ou pelagem opaca", color: "bg-brand-sky", iconColor: "text-brand-primary", href: "/servicos/alergia-atopica" },
+  { icon: "Wind" as const, titulo: "Mau cheiro", descricao: "Odor persistente na pele ou orelhas", color: "bg-brand-blush", iconColor: "text-brand-coral", href: "/servicos/otite-cronica" },
+  { icon: "Bug" as const, titulo: "Sarna e parasitas", descricao: "Pulgas, ácaros e infestações", color: "bg-brand-cream-2", iconColor: "text-brand-primary", href: "/servicos/sarna-demodicica" },
 ];
 
 export function Problemas() {
@@ -44,7 +44,7 @@ export function Problemas() {
             return (
               <Link
                 key={p.titulo}
-                href="#casos"
+                href={p.href}
                 className="group relative block overflow-hidden rounded-[1.75rem] bg-white p-7 shadow-soft ring-1 ring-brand-primary/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-card"
               >
                 {/* Background fill on hover */}
