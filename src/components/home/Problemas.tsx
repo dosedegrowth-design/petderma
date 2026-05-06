@@ -21,7 +21,7 @@ export function Problemas() {
   return (
     <section id="servicos" className="relative py-20 md:py-24">
       <Container size="lg">
-        <FadeUp className="max-w-3xl">
+        <FadeUp className="max-w-3xl text-center lg:text-left">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
             Identifique o problema
           </span>

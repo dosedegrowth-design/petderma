@@ -55,7 +55,7 @@ export function PageHero({
           <nav
             aria-label="Breadcrumb"
             className={cn(
-              "mb-6 flex flex-wrap items-center gap-1.5 text-xs font-medium",
+              "mb-6 flex flex-wrap items-center justify-center gap-1.5 text-xs font-medium lg:justify-start",
               isDark ? "text-white/60" : "text-brand-secondary"
             )}
           >
@@ -82,7 +82,7 @@ export function PageHero({
           </nav>
         )}
 
-        <FadeUp>
+        <FadeUp className="text-center lg:text-left">
           {eyebrow && (
             <span
               className={cn(
@@ -95,7 +95,7 @@ export function PageHero({
           )}
           <h1
             className={cn(
-              "mt-3 text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight md:text-5xl lg:text-6xl",
+              "mt-3 text-balance font-display text-3xl font-bold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl",
               isDark ? "text-white" : "text-brand-primary"
             )}
           >
@@ -104,7 +104,7 @@ export function PageHero({
           {description && (
             <p
               className={cn(
-                "mt-5 max-w-2xl text-lg leading-relaxed",
+                "mx-auto mt-5 max-w-2xl text-base leading-relaxed sm:text-lg lg:mx-0",
                 isDark ? "text-white/70" : "text-brand-secondary"
               )}
             >

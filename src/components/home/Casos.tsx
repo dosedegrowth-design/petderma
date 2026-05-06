@@ -36,8 +36,8 @@ export function Casos() {
   return (
     <section id="casos" className="relative overflow-hidden py-20 md:py-24">
       <Container size="lg">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <FadeUp className="max-w-2xl">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-end md:justify-between">
+          <FadeUp className="max-w-2xl text-center md:text-left">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Casos resolvidos
             </span>
@@ -46,7 +46,7 @@ export function Casos() {
               <span className="text-brand-accent">brilhar</span>
             </h2>
           </FadeUp>
-          <FadeUp delay={0.1}>
+          <FadeUp delay={0.1} className="text-center md:text-left">
             <p className="text-lg text-brand-secondary md:max-w-xs">
               Cada caso é único. Cada protocolo é desenhado especificamente para o pet em
               questão.

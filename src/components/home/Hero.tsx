@@ -46,7 +46,7 @@ export function Hero() {
 
       <Container size="lg" className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-7">
+          <div className="text-center lg:col-span-7 lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -91,14 +91,14 @@ export function Hero() {
             </h1>
 
             <FadeUp delay={0.35} immediate>
-              <p className="mt-5 max-w-xl text-balance text-base leading-relaxed text-brand-secondary md:text-lg">
+              <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-brand-secondary md:text-lg lg:mx-0">
                 Há <strong className="font-semibold text-brand-primary">12 anos</strong> resolvemos os
                 casos dermatológicos mais complexos de SP. Diagnóstico no mesmo dia, tratamento
                 direcionado e alívio rápido.
               </p>
             </FadeUp>
 
-            <FadeUp delay={0.5} immediate className="mt-7 flex flex-wrap items-center gap-3">
+            <FadeUp delay={0.5} immediate className="mt-7 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <Magnetic>
                 <WhatsAppCTA source="hero" size="lg" variant="dark">
                   Agendar consulta
@@ -113,7 +113,7 @@ export function Hero() {
             </FadeUp>
 
             {/* Quick social proof under CTA */}
-            <FadeUp delay={0.65} immediate className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-brand-secondary">
+            <FadeUp delay={0.65} immediate className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-brand-secondary lg:justify-start">
               <div className="flex items-center gap-1.5">
                 <div className="flex">
                   {Array.from({ length: 5 }).map((_, i) => (
@@ -131,7 +131,7 @@ export function Hero() {
 
             {/* Stats bar — compact */}
             <FadeUp delay={0.78} immediate>
-              <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-brand-primary/10 pt-7 sm:grid-cols-4">
+              <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-brand-primary/10 pt-7 text-center sm:grid-cols-4 lg:text-left">
                 {STATS.map((s) => (
                   <div key={s.label}>
                     <div className="font-display text-2xl font-bold tracking-tight text-brand-primary md:text-3xl">
@@ -148,7 +148,7 @@ export function Hero() {
 
           {/* Image */}
           <div className="relative lg:col-span-5">
-            <div className="relative mx-auto aspect-[5/6] w-full max-w-[460px]">
+            <div className="relative mx-auto aspect-[5/6] w-full max-w-[340px] sm:max-w-[460px]">
               <div className="absolute inset-0 -rotate-3 rounded-[2rem] bg-brand-accent" />
               <div className="absolute inset-0 rotate-2 rounded-[2rem] bg-brand-lavender opacity-40" />
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] shadow-float">
@@ -156,56 +156,56 @@ export function Hero() {
                   src="/photos/hero-real.jpg"
                   alt="Equipe PetDerma atendendo um pet com carinho"
                   fill
-                  sizes="(min-width: 1024px) 460px, 90vw"
+                  sizes="(min-width: 1024px) 460px, (min-width: 640px) 460px, 340px"
                   priority
                   className="object-cover"
                 />
               </div>
 
               {/* Floating card — Experience */}
-              <div className="absolute -left-4 -top-4 max-w-[220px] rounded-2xl bg-white p-3.5 shadow-card sm:-left-8 sm:-top-6">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-accent text-brand-primary">
-                    <span className="font-display text-lg font-bold">12+</span>
+              <div className="absolute -left-2 -top-3 max-w-[180px] rounded-2xl bg-white p-2.5 shadow-card sm:-left-8 sm:-top-6 sm:max-w-[220px] sm:p-3.5">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-accent text-brand-primary sm:h-11 sm:w-11">
+                    <span className="font-display text-base font-bold sm:text-lg">12+</span>
                   </div>
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-secondary">
+                    <p className="text-[9px] font-semibold uppercase tracking-wider text-brand-secondary sm:text-[10px]">
                       Anos
                     </p>
-                    <p className="text-sm font-bold text-brand-primary">de experiência</p>
+                    <p className="text-xs font-bold text-brand-primary sm:text-sm">de experiência</p>
                   </div>
                 </div>
               </div>
 
               {/* Floating card — Pets */}
-              <div className="absolute -bottom-6 -left-4 max-w-[220px] rounded-2xl bg-white p-3.5 shadow-card sm:-left-8">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-lavender/20 text-brand-lavender">
-                    <Sparkles className="size-5" strokeWidth={2} />
+              <div className="absolute -bottom-5 -left-2 max-w-[180px] rounded-2xl bg-white p-2.5 shadow-card sm:-bottom-6 sm:-left-8 sm:max-w-[220px] sm:p-3.5">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-lavender/20 text-brand-lavender sm:h-11 sm:w-11">
+                    <Sparkles className="size-4 sm:size-5" strokeWidth={2} />
                   </div>
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-secondary">
+                    <p className="text-[9px] font-semibold uppercase tracking-wider text-brand-secondary sm:text-[10px]">
                       +3.500 pets
                     </p>
-                    <p className="text-sm font-bold text-brand-primary">tratados</p>
+                    <p className="text-xs font-bold text-brand-primary sm:text-sm">tratados</p>
                   </div>
                 </div>
               </div>
 
               {/* Floating card — Exames no local */}
-              <div className="absolute -right-4 top-1/3 max-w-[220px] rounded-2xl bg-brand-primary p-3.5 text-white shadow-card sm:-right-10">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-accent text-brand-primary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+              <div className="absolute -right-2 top-1/3 max-w-[180px] rounded-2xl bg-brand-primary p-2.5 text-white shadow-card sm:-right-10 sm:max-w-[220px] sm:p-3.5">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-accent text-brand-primary sm:h-11 sm:w-11">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="size-4 sm:size-5">
                       <path d="M9 2v6l-4 8a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4l-4-8V2" />
                       <path d="M9 2h6" />
                     </svg>
                   </div>
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-accent">
+                    <p className="text-[9px] font-semibold uppercase tracking-wider text-brand-accent sm:text-[10px]">
                       Exames
                     </p>
-                    <p className="text-sm font-bold text-white">realizados no local</p>
+                    <p className="text-xs font-bold text-white sm:text-sm">no local</p>
                   </div>
                 </div>
               </div>

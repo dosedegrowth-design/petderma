@@ -78,6 +78,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Mobile sticky bar padding (so content isn't hidden under fixed bar) */
+@media (max-width: 639px) {
+  body {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
+}
+
 /* Selection */
 ::selection {
   background: var(--color-brand-accent);

@@ -41,7 +41,7 @@ export function Diferenciais() {
   return (
     <section className="relative overflow-hidden bg-brand-cream py-20 md:py-24">
       <Container size="lg">
-        <FadeUp className="max-w-3xl">
+        <FadeUp className="max-w-3xl text-center lg:text-left">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
             Por que PetDerma
           </span>

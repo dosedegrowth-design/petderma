@@ -27,8 +27,8 @@ export function BlogSection() {
       />
 
       <Container size="lg" className="relative">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <FadeUp className="max-w-2xl">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-end md:justify-between">
+          <FadeUp className="max-w-2xl text-center md:text-left">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Blog PetDerma
             </span>

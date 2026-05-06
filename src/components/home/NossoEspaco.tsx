@@ -23,7 +23,7 @@ export function NossoEspaco() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white to-brand-violet-soft py-20 md:py-24">
       <Container size="lg">
-        <FadeUp className="mb-10 max-w-3xl">
+        <FadeUp className="mb-10 max-w-3xl text-center lg:text-left">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
             Nosso espaço
           </span>
