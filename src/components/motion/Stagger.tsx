@@ -1,12 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
-import { Children } from "react";
+import { motion, useReducedMotion, useInView } from "motion/react";
+import { Children, useEffect, useRef, useState } from "react";
 
-/**
- * Stagger wraps each child in its own motion.div that animates with sequential delay.
- * Triggers as soon as element enters viewport with margin so users never see blank cards.
- */
 export function Stagger({
   children,
   staggerDelay = 0.06,
@@ -19,25 +15,36 @@ export function Stagger({
   baseDelay?: number;
 }) {
   const reduce = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const [hasMounted, setHasMounted] = useState(false);
+  const inView = useInView(ref, { once: true, margin: "200px 0px 200px 0px" });
   const arr = Children.toArray(children);
 
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  const shouldAnimate = hasMounted && !reduce;
+
   return (
-    <div className={className}>
-      {arr.map((child, i) => (
-        <motion.div
-          key={i}
-          initial={reduce ? false : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
-          transition={{
-            duration: 0.5,
-            ease: [0.22, 1, 0.36, 1],
-            delay: baseDelay + i * staggerDelay,
-          }}
-        >
-          {child}
-        </motion.div>
-      ))}
+    <div ref={ref} className={className}>
+      {arr.map((child, i) => {
+        const isVisible = !shouldAnimate || inView;
+        return (
+          <motion.div
+            key={i}
+            initial={shouldAnimate ? { opacity: 0, y: 16 } : false}
+            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 16 }}
+            transition={{
+              duration: 0.5,
+              ease: [0.22, 1, 0.36, 1],
+              delay: baseDelay + i * staggerDelay,
+            }}
+          >
+            {child}
+          </motion.div>
+        );
+      })}
     </div>
   );
 }
