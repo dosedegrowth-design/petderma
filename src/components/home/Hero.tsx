@@ -49,7 +49,8 @@ export function Hero() {
           <div className="lg:col-span-7">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
               transition={{ duration: 0.5, delay: 0.05 }}
               className="inline-flex items-center gap-2 rounded-pill border border-brand-primary/10 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-brand-primary shadow-soft backdrop-blur-sm"
             >
@@ -67,7 +68,8 @@ export function Hero() {
                 </Reveal>
                 <motion.svg
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
                   transition={{ delay: 1, duration: 0.3 }}
                   className="absolute -bottom-2 left-0 z-0 h-3 w-full"
                   viewBox="0 0 300 12"
@@ -80,7 +82,8 @@ export function Hero() {
                     strokeWidth="6"
                     strokeLinecap="round"
                     initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
                     transition={{ duration: 1.1, delay: 1, ease: [0.22, 1, 0.36, 1] }}
                   />
                 </motion.svg>
@@ -147,7 +150,8 @@ export function Hero() {
           <div className="relative lg:col-span-5">
             <motion.div
               initial={{ opacity: 0, scale: 0.94, rotate: -2 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
               transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
               className="relative mx-auto aspect-[4/5] w-full max-w-[420px]"
             >
@@ -167,7 +171,8 @@ export function Hero() {
               {/* Floating card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
                 transition={{ delay: 0.9, duration: 0.5 }}
                 className="absolute -bottom-6 -left-4 max-w-[200px] rounded-2xl bg-white p-3.5 shadow-card sm:-left-8"
               >
@@ -187,7 +192,8 @@ export function Hero() {
               {/* Floating badge top */}
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0, margin: "200px 0px 200px 0px" }}
                 transition={{ delay: 1.1, duration: 0.4, type: "spring" }}
                 className="absolute -right-3 -top-3 flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary text-center text-[9px] font-bold uppercase leading-tight tracking-wider text-white shadow-card sm:-right-4 sm:-top-4 sm:h-20 sm:w-20 sm:text-[10px]"
               >
