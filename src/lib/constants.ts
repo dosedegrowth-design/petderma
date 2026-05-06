@@ -25,6 +25,16 @@ export const UNIDADES = [
     horario: { semana: "Seg–Sex 8h às 18h", sabado: "Sáb 8h às 17h", feriado: "Feriados 8h às 14h" },
     coords: { lat: -23.6219, lng: -46.6711 },
     mapEmbed: "https://www.google.com/maps?q=Rua+República+do+Iraque,+1497,+São+Paulo&output=embed",
+    fotos: [
+      "/photos/unidade-campo-belo/IMG_5707.jpg",
+      "/photos/unidade-campo-belo/IMG_5703.jpg",
+      "/photos/unidade-campo-belo/DSC04057.jpg",
+      "/photos/unidade-campo-belo/IMG_5704.jpg",
+      "/photos/unidade-campo-belo/DSC03694.jpg",
+      "/photos/unidade-campo-belo/IMG_5705.jpg",
+      "/photos/unidade-campo-belo/DSC01861.jpg",
+      "/photos/unidade-campo-belo/IMG_5691.jpg",
+    ],
   },
   {
     slug: "tatuape",
@@ -38,6 +48,16 @@ export const UNIDADES = [
     horario: { semana: "Seg–Sex 8h às 18h", sabado: "Sáb 8h às 17h", feriado: "Feriados 8h às 14h" },
     coords: { lat: -23.5400, lng: -46.5764 },
     mapEmbed: "https://www.google.com/maps?q=Rua+Itapeti,+272,+São+Paulo&output=embed",
+    fotos: [
+      "/photos/unidade-tatuape/DSC03631.jpg",
+      "/photos/unidade-tatuape/IMG_5701.jpg",
+      "/photos/unidade-tatuape/DSC02455.jpg",
+      "/photos/unidade-tatuape/IMG_5692.jpg",
+      "/photos/unidade-tatuape/DSC03664.jpg",
+      "/photos/unidade-tatuape/IMG_5693.jpg",
+      "/photos/unidade-tatuape/DSC03670.jpg",
+      "/photos/unidade-tatuape/IMG_5700.jpg",
+    ],
   },
   {
     slug: "sao-jose-dos-campos",
@@ -51,6 +71,16 @@ export const UNIDADES = [
     horario: { semana: "Seg–Sex 8h às 18h", sabado: "Sáb 8h às 17h", feriado: "Feriados 8h às 14h" },
     coords: { lat: -23.2237, lng: -45.9009 },
     mapEmbed: "https://www.google.com/maps?q=R.+Carlos+Maria+Auricchio,+75,+São+José+dos+Campos&output=embed",
+    fotos: [
+      "/photos/unidade-sjc/DSC03268.jpg",
+      "/photos/unidade-sjc/IMG_5708.jpg",
+      "/photos/unidade-sjc/DSC03823.jpg",
+      "/photos/unidade-sjc/IMG_5694.jpg",
+      "/photos/unidade-sjc/DSC04030.jpg",
+      "/photos/unidade-sjc/IMG_5702.jpg",
+      "/photos/unidade-sjc/DSC04114.jpg",
+      "/photos/unidade-sjc/IMG_5706.jpg",
+    ],
   },
 ] as const;
 

@@ -9,11 +9,11 @@ import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { Magnetic } from "@/components/motion/Magnetic";
 
-const TIMELINE = [
-  { icon: GraduationCap, ano: "2012", text: "Formação em Medicina Veterinária" },
-  { icon: BookOpen, ano: "2014", text: "Especialização em Dermatologia Veterinária" },
-  { icon: Award, ano: "2018", text: "Pós-graduação em Otologia Avançada" },
-  { icon: Calendar, ano: "Hoje", text: "+3.500 pets tratados em 3 unidades" },
+const MARCOS = [
+  { icon: GraduationCap, ano: "2012", text: "Início da PetDerma com foco em dermatologia veterinária" },
+  { icon: BookOpen, ano: "2014", text: "Ampliação dos serviços e equipamentos diagnósticos" },
+  { icon: Award, ano: "2018", text: "Tecnologia de otoendoscopia (poucas clínicas em SP)" },
+  { icon: Calendar, ano: "Hoje", text: "+3.500 pets tratados em 3 unidades em SP" },
 ];
 
 export function Equipe() {
@@ -40,8 +40,8 @@ export function Equipe() {
                 className="absolute -left-6 -top-6 h-full w-full rounded-[2rem] bg-brand-accent"
               />
               <ParallaxImage
-                src="/photos/dr-douglas.jpg"
-                alt="Dr. Douglas Bessa, Veterinário Dermatologista"
+                src="/photos/equipe.jpg"
+                alt="Equipe PetDerma — Dermatologia Veterinária"
                 intensity={6}
                 containerClassName="relative h-full w-full rounded-[2rem] shadow-float"
               />
@@ -62,28 +62,28 @@ export function Equipe() {
           <div className="lg:col-span-7">
             <FadeUp>
               <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
-                Quem cuida do seu pet
+                Quem somos
               </span>
               <h2 className="mt-3 text-balance font-display text-4xl font-bold leading-tight tracking-tight text-brand-primary md:text-5xl">
-                Dr. Douglas Bessa
+                Uma equipe especializada em dermatologia veterinária
               </h2>
-              <p className="mt-2 text-lg font-medium text-brand-secondary">
-                Médico Veterinário Dermatologista — CRMV-SP
-              </p>
             </FadeUp>
 
             <FadeUp delay={0.1}>
               <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-brand-secondary">
-                Especialista em dermatologia veterinária com mais de uma década dedicado a casos
-                complexos de alergias, otites crônicas e doenças de pele em cães e gatos.
-                Acredita que <strong className="font-semibold text-brand-primary">ouvir o tutor</strong> é
-                tão importante quanto examinar o pet.
+                A PetDerma reúne médicos veterinários dermatologistas, técnicos especializados
+                e atendentes treinados para oferecer um cuidado completo. Mais de uma década
+                dedicada a casos complexos de alergias, otites crônicas e doenças de pele em
+                cães e gatos.{" "}
+                <strong className="font-semibold text-brand-primary">
+                  Acreditamos que ouvir o tutor é tão importante quanto examinar o pet.
+                </strong>
               </p>
             </FadeUp>
 
             {/* Timeline */}
             <div className="mt-10 space-y-5">
-              {TIMELINE.map((item, i) => (
+              {MARCOS.map((item, i) => (
                 <motion.div
                   key={item.ano}
                   initial={{ opacity: 0, x: -20 }}
@@ -108,7 +108,7 @@ export function Equipe() {
             <FadeUp delay={0.2} className="mt-10">
               <Magnetic>
                 <WhatsAppCTA source="equipe" size="lg" variant="dark">
-                  Agendar consulta com Dr. Douglas
+                  Agendar consulta
                 </WhatsAppCTA>
               </Magnetic>
             </FadeUp>

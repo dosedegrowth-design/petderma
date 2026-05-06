@@ -9,6 +9,7 @@ import { FadeUp } from "@/components/motion/FadeUp";
 import { Stagger } from "@/components/motion/Stagger";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { Magnetic } from "@/components/motion/Magnetic";
+import { PhotoCarousel } from "@/components/PhotoCarousel";
 import { UNIDADES, type UnidadeSlug, SITE } from "@/lib/constants";
 
 export function generateStaticParams() {
@@ -104,7 +105,7 @@ export default async function UnidadePage({
             </WhatsAppCTA>
           </Magnetic>
           <a
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
               `${unidade.endereco}, ${unidade.cidade}`
             )}`}
             target="_blank"
@@ -112,10 +113,35 @@ export default async function UnidadePage({
             className="inline-flex h-14 items-center gap-2 rounded-pill border-2 border-brand-primary px-9 text-base font-semibold text-brand-primary transition-all hover:bg-brand-primary hover:text-white"
           >
             <Navigation className="size-4" />
-            Como chegar
+            Traçar rota
           </a>
         </FadeUp>
       </PageHero>
+
+      {/* Galeria de fotos da unidade */}
+      <section className="bg-gradient-to-b from-white to-brand-violet-soft py-12 md:py-16">
+        <Container size="lg">
+          <FadeUp className="mb-8 max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
+              Conheça a unidade
+            </span>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-brand-primary md:text-4xl">
+              Por dentro da PetDerma {unidade.nome}
+            </h2>
+          </FadeUp>
+          <FadeUp delay={0.1}>
+            <PhotoCarousel
+              photos={unidade.fotos.map((src, i) => ({
+                src,
+                alt: `Foto ${i + 1} da unidade ${unidade.nome}`,
+              }))}
+              slidesPerView={{ base: 1.15, sm: 2.2, lg: 3 }}
+              aspectRatio="aspect-[4/3]"
+              autoplay
+            />
+          </FadeUp>
+        </Container>
+      </section>
 
       {/* Mapa + Info */}
       <section className="py-12 md:py-16">

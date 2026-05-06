@@ -4,6 +4,7 @@ import { Problemas } from "@/components/home/Problemas";
 import { Diferenciais } from "@/components/home/Diferenciais";
 import { Processo } from "@/components/home/Processo";
 import { Casos } from "@/components/home/Casos";
+import { NossoEspaco } from "@/components/home/NossoEspaco";
 import { Equipe } from "@/components/home/Equipe";
 import { Depoimentos } from "@/components/home/Depoimentos";
 import { Unidades } from "@/components/home/Unidades";
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Diferenciais />
       <Processo />
       <Casos />
+      <NossoEspaco />
       <Equipe />
       <Depoimentos />
       <Unidades />
