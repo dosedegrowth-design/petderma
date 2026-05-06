@@ -16,15 +16,17 @@ export function buildWhatsAppLink({ unidade, message, source }: WhatsAppOpts) {
   return `https://wa.me/${target.telefone}?text=${encodeURIComponent(txt)}`;
 }
 
+declare global {
+  interface Window {
+    va?: (event: string, payload: Record<string, unknown>) => void;
+    gtag?: (event: string, name: string, payload: Record<string, unknown>) => void;
+    clarity?: (event: string, name: string) => void;
+  }
+}
+
 export function trackWhatsAppClick(source: string) {
   if (typeof window === "undefined") return;
-  // Vercel Analytics
-  // @ts-expect-error - va is injected at runtime
-  if (window.va) window.va("event", { name: "whatsapp_click", source });
-  // GA4
-  // @ts-expect-error - gtag is injected at runtime
-  if (window.gtag) window.gtag("event", "whatsapp_click", { source });
-  // Microsoft Clarity
-  // @ts-expect-error - clarity is injected at runtime
-  if (window.clarity) window.clarity("event", `whatsapp_${source}`);
+  window.va?.("event", { name: "whatsapp_click", source });
+  window.gtag?.("event", "whatsapp_click", { source });
+  window.clarity?.("event", `whatsapp_${source}`);
 }

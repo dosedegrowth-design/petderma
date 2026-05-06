@@ -34,9 +34,9 @@ export function Unidades() {
           </h2>
         </FadeUp>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-12">
-          {/* Tabs */}
-          <div className="lg:col-span-4">
+        <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-12 lg:items-start">
+          {/* Tabs — sticky on desktop */}
+          <div className="lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
             <div className="flex flex-col gap-3">
               {UNIDADES.map((u) => {
                 const isActive = u.slug === active;
@@ -124,7 +124,7 @@ export function Unidades() {
                     Agendar nessa unidade
                   </WhatsAppCTA>
                   <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
                       `${current.endereco}, ${current.cidade}`
                     )}`}
                     target="_blank"
@@ -132,7 +132,7 @@ export function Unidades() {
                     className="inline-flex h-12 items-center gap-2 rounded-pill border border-white/20 px-6 text-sm font-semibold text-white transition-all hover:border-brand-accent hover:bg-brand-accent hover:text-brand-primary"
                   >
                     <Navigation className="size-4" />
-                    Como chegar
+                    Traçar rota
                   </a>
                 </div>
               </div>

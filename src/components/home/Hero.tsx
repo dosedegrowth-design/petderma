@@ -148,42 +148,66 @@ export function Hero() {
 
           {/* Image */}
           <div className="relative lg:col-span-5">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-[420px]">
+            <div className="relative mx-auto aspect-[5/6] w-full max-w-[460px]">
               <div className="absolute inset-0 -rotate-3 rounded-[2rem] bg-brand-accent" />
               <div className="absolute inset-0 rotate-2 rounded-[2rem] bg-brand-lavender opacity-40" />
               <div className="relative h-full w-full overflow-hidden rounded-[2rem] shadow-float">
                 <Image
-                  src="/photos/hero.jpg"
-                  alt="Veterinário dermatologista atendendo um pet"
+                  src="/photos/hero-real.jpg"
+                  alt="Equipe PetDerma atendendo um pet com carinho"
                   fill
-                  sizes="(min-width: 1024px) 420px, 90vw"
+                  sizes="(min-width: 1024px) 460px, 90vw"
                   priority
                   className="object-cover"
                 />
               </div>
 
-              {/* Floating card */}
-              <div
-                className="absolute -bottom-6 -left-4 max-w-[200px] rounded-2xl bg-white p-3.5 shadow-card sm:-left-8"
-              >
+              {/* Floating card — Experience */}
+              <div className="absolute -left-4 -top-4 max-w-[220px] rounded-2xl bg-white p-3.5 shadow-card sm:-left-8 sm:-top-6">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent/15">
-                    <Sparkles className="size-5 text-brand-accent" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-accent text-brand-primary">
+                    <span className="font-display text-lg font-bold">12+</span>
                   </div>
                   <div>
                     <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-secondary">
-                      Resultado
+                      Anos
                     </p>
-                    <p className="text-sm font-bold text-brand-primary">em até 24h</p>
+                    <p className="text-sm font-bold text-brand-primary">de experiência</p>
                   </div>
                 </div>
               </div>
 
-              {/* Floating badge top */}
-              <div
-                className="absolute -right-3 -top-3 flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary text-center text-[9px] font-bold uppercase leading-tight tracking-wider text-white shadow-card sm:-right-4 sm:-top-4 sm:h-20 sm:w-20 sm:text-[10px]"
-              >
-                CRMV<br />SP
+              {/* Floating card — Pets */}
+              <div className="absolute -bottom-6 -left-4 max-w-[220px] rounded-2xl bg-white p-3.5 shadow-card sm:-left-8">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-lavender/20 text-brand-lavender">
+                    <Sparkles className="size-5" strokeWidth={2} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-secondary">
+                      +3.500 pets
+                    </p>
+                    <p className="text-sm font-bold text-brand-primary">tratados</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating card — Exames no local */}
+              <div className="absolute -right-4 top-1/3 max-w-[220px] rounded-2xl bg-brand-primary p-3.5 text-white shadow-card sm:-right-10">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-accent text-brand-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+                      <path d="M9 2v6l-4 8a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4l-4-8V2" />
+                      <path d="M9 2h6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-accent">
+                      Exames
+                    </p>
+                    <p className="text-sm font-bold text-white">realizados no local</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

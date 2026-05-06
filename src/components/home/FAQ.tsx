@@ -10,8 +10,8 @@ export function FAQ() {
   return (
     <section id="faq" className="py-20 md:py-24">
       <Container size="default">
-        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <FadeUp className="lg:col-span-5">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16 lg:items-start">
+          <FadeUp className="lg:col-span-5 lg:sticky lg:top-24 lg:self-start">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
               Perguntas frequentes
             </span>
