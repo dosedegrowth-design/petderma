@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
-import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -107,13 +106,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="font-sans antialiased">
-        <SmoothScroll>
-          <ScrollProgress />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <StickyWhatsApp />
-        </SmoothScroll>
+        <ScrollProgress />
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <StickyWhatsApp />
       </body>
     </html>
   );

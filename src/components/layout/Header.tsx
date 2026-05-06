@@ -18,10 +18,7 @@ export function Header() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+      <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-500",
           scrolled
@@ -67,7 +64,7 @@ export function Header() {
             <Menu className="size-5" />
           </button>
         </div>
-      </motion.header>
+      </header>
 
       {/* Mobile menu */}
       <motion.div
