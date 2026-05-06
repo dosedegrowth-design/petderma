@@ -20,7 +20,7 @@ const PROBLEMAS = [
 
 export function Problemas() {
   return (
-    <section id="servicos" className="relative py-24 md:py-32">
+    <section id="servicos" className="relative py-20 md:py-24">
       <Container size="lg">
         <FadeUp className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
@@ -38,7 +38,7 @@ export function Problemas() {
 
         <Stagger
           staggerDelay={0.06}
-          className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
         >
           {PROBLEMAS.map((p) => {
             const Icon = ICONS[p.icon];

@@ -18,7 +18,7 @@ const TIMELINE = [
 
 export function Equipe() {
   return (
-    <section className="relative overflow-hidden py-24 md:py-32">
+    <section className="relative overflow-hidden py-20 md:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-accent/10 blur-3xl"

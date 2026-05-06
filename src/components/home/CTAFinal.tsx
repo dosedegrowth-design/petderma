@@ -11,7 +11,7 @@ import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 
 export function CTAFinal() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-mint via-white to-brand-violet-soft py-24 md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-mint via-white to-brand-violet-soft py-20 md:py-24">
       {/* Animated conic gradient */}
       <motion.div
         aria-hidden

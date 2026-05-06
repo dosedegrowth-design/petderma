@@ -8,7 +8,7 @@ import { FAQ_ITEMS } from "@/lib/constants";
 
 export function FAQ() {
   return (
-    <section id="faq" className="py-24 md:py-32">
+    <section id="faq" className="py-20 md:py-24">
       <Container size="default">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           <FadeUp className="lg:col-span-5">

@@ -14,7 +14,7 @@ export function Unidades() {
   const current = UNIDADES.find((u) => u.slug === active)!;
 
   return (
-    <section id="unidades" className="relative overflow-hidden bg-brand-primary py-24 text-white md:py-32">
+    <section id="unidades" className="relative overflow-hidden bg-brand-primary py-20 text-white md:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-32 -right-40 h-[500px] w-[500px] rounded-full bg-brand-accent/15 blur-3xl"
@@ -34,7 +34,7 @@ export function Unidades() {
           </h2>
         </FadeUp>
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-12 lg:gap-12">
+        <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Tabs */}
           <div className="lg:col-span-4">
             <div className="flex flex-col gap-3">

@@ -6,22 +6,28 @@ export function Stagger({
   children,
   staggerDelay = 0.08,
   className,
+  immediate = false,
 }: {
   children: React.ReactNode;
   staggerDelay?: number;
   className?: string;
+  immediate?: boolean;
 }) {
+  const variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: staggerDelay } },
+  };
+
+  const animProps = immediate
+    ? { initial: "hidden" as const, animate: "visible" as const }
+    : {
+        initial: "hidden" as const,
+        whileInView: "visible" as const,
+        viewport: { once: true, amount: 0.15, margin: "-40px" } as const,
+      };
+
   return (
-    <motion.div
-      className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: staggerDelay } },
-      }}
-    >
+    <motion.div className={className} {...animProps} variants={variants}>
       {children}
     </motion.div>
   );

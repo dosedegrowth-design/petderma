@@ -35,7 +35,7 @@ const CASOS = [
 
 export function Casos() {
   return (
-    <section id="casos" className="relative overflow-hidden py-24 md:py-32">
+    <section id="casos" className="relative overflow-hidden py-20 md:py-24">
       <Container size="lg">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <FadeUp className="max-w-2xl">
@@ -57,7 +57,7 @@ export function Casos() {
 
         <Stagger
           staggerDelay={0.1}
-          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           {CASOS.map((caso) => (
             <motion.article

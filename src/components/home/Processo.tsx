@@ -36,7 +36,7 @@ export function Processo() {
   const lineProgress = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section id="sobre" className="relative overflow-hidden bg-brand-primary py-24 text-white md:py-32">
+    <section id="sobre" className="relative overflow-hidden bg-brand-primary py-20 text-white md:py-24">
       <div
         aria-hidden
         className="pointer-events-none absolute -top-40 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-brand-accent/15 blur-3xl"
@@ -56,7 +56,7 @@ export function Processo() {
           </p>
         </FadeUp>
 
-        <div ref={ref} className="relative mt-20">
+        <div ref={ref} className="relative mt-14">
           {/* Connector line - desktop */}
           <div className="absolute left-0 right-0 top-12 hidden h-0.5 lg:block">
             <div className="absolute inset-0 bg-white/10" />

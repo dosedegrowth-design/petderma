@@ -36,7 +36,7 @@ const DEPOIMENTOS = [
 
 export function Depoimentos() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white to-brand-violet-soft py-24 md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white to-brand-violet-soft py-20 md:py-24">
       <Container size="lg">
         <FadeUp className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
@@ -50,7 +50,7 @@ export function Depoimentos() {
 
         <Stagger
           staggerDelay={0.12}
-          className="mt-14 grid gap-6 md:grid-cols-3"
+          className="mt-10 grid gap-6 md:grid-cols-3"
         >
           {DEPOIMENTOS.map((d) => (
             <motion.article

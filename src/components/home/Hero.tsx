@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, Star } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Counter } from "@/components/motion/Counter";
@@ -14,15 +15,15 @@ import { STATS } from "@/lib/constants";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-brand-violet-soft via-white to-brand-mint pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-44">
+    <section className="relative overflow-hidden bg-gradient-to-br from-brand-violet-soft via-white to-brand-mint pb-16 pt-28 md:pb-20 md:pt-32 lg:pt-36">
       {/* Decorative blobs */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-32 -left-40 h-[500px] w-[500px] rounded-full bg-brand-accent-soft/30 blur-3xl"
+        className="pointer-events-none absolute -left-40 -top-32 h-[500px] w-[500px] rounded-full bg-brand-accent-soft/30 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute top-40 right-0 h-[400px] w-[400px] rounded-full bg-brand-lavender/20 blur-3xl"
+        className="pointer-events-none absolute right-0 top-40 h-[400px] w-[400px] rounded-full bg-brand-lavender/20 blur-3xl"
       />
 
       {/* Floating decoration */}
@@ -30,44 +31,44 @@ export function Hero() {
         aria-hidden
         animate={{ rotate: 360 }}
         transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-        className="absolute right-[8%] top-32 hidden lg:block"
+        className="absolute right-[6%] top-28 hidden lg:block"
       >
-        <Image src="/design/lined-circle.png" alt="" width={140} height={140} className="opacity-60" />
+        <Image src="/design/lined-circle.png" alt="" width={120} height={120} className="opacity-50" />
       </motion.div>
       <motion.div
         aria-hidden
-        animate={{ y: [0, -20, 0] }}
+        animate={{ y: [0, -16, 0] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-[6%] bottom-32 hidden lg:block"
+        className="absolute bottom-32 left-[5%] hidden lg:block"
       >
-        <Image src="/design/sparkle.png" alt="" width={80} height={80} />
+        <Image src="/design/sparkle.png" alt="" width={64} height={64} />
       </motion.div>
 
       <Container size="lg" className="relative">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-7">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 rounded-pill border border-brand-primary/10 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-brand-primary shadow-soft backdrop-blur-sm"
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="inline-flex items-center gap-2 rounded-pill border border-brand-primary/10 bg-white/80 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-brand-primary shadow-soft backdrop-blur-sm"
             >
-              <Sparkles className="size-3.5 text-brand-accent" />
+              <Sparkles className="size-3 text-brand-accent" />
               Especialistas em Dermatologia Veterinária
             </motion.div>
 
-            <h1 className="mt-6 text-balance font-display text-[clamp(2.25rem,5.5vw,4.5rem)] font-bold leading-[1.05] tracking-tight text-brand-primary">
+            <h1 className="mt-5 text-balance font-display text-[clamp(2rem,5vw,4rem)] font-bold leading-[1.05] tracking-tight text-brand-primary">
               <Reveal>Seu pet coça,</Reveal>{" "}
-              <Reveal delay={0.1}>lambe ou tem</Reveal>
+              <Reveal delay={0.08}>lambe ou tem</Reveal>
               <br className="hidden sm:block" />{" "}
               <span className="relative inline-block">
-                <Reveal delay={0.2}>
+                <Reveal delay={0.16}>
                   <span className="relative z-10 text-brand-accent">feridas que não saram?</span>
                 </Reveal>
                 <motion.svg
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1, delay: 1.2, ease: "easeInOut" }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1, duration: 0.3 }}
                   className="absolute -bottom-2 left-0 z-0 h-3 w-full"
                   viewBox="0 0 300 12"
                   fill="none"
@@ -80,43 +81,60 @@ export function Hero() {
                     strokeLinecap="round"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 1.2, delay: 1, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 1.1, delay: 1, ease: [0.22, 1, 0.36, 1] }}
                   />
                 </motion.svg>
               </span>
             </h1>
 
-            <FadeUp delay={0.4}>
-              <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-brand-secondary md:text-xl">
+            <FadeUp delay={0.35} immediate>
+              <p className="mt-5 max-w-xl text-balance text-base leading-relaxed text-brand-secondary md:text-lg">
                 Há <strong className="font-semibold text-brand-primary">12 anos</strong> resolvemos os
                 casos dermatológicos mais complexos de SP. Diagnóstico no mesmo dia, tratamento
                 direcionado e alívio rápido.
               </p>
             </FadeUp>
 
-            <FadeUp delay={0.55} className="mt-8 flex flex-wrap items-center gap-4">
+            <FadeUp delay={0.5} immediate className="mt-7 flex flex-wrap items-center gap-3">
               <Magnetic>
                 <WhatsAppCTA source="hero" size="lg" variant="dark">
                   Agendar consulta
                 </WhatsAppCTA>
               </Magnetic>
               <Button asChild size="lg" variant="ghost">
-                <a href="#casos">
+                <Link href="#casos">
                   Ver casos resolvidos
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </a>
+                  <ArrowRight className="size-4" />
+                </Link>
               </Button>
             </FadeUp>
 
-            {/* Trust bar */}
-            <FadeUp delay={0.7}>
-              <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-4">
+            {/* Quick social proof under CTA */}
+            <FadeUp delay={0.65} immediate className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-brand-secondary">
+              <div className="flex items-center gap-1.5">
+                <div className="flex">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="size-4 fill-brand-accent text-brand-accent" />
+                  ))}
+                </div>
+                <span className="font-semibold text-brand-primary">4.9</span>
+                <span>· avaliação dos tutores</span>
+              </div>
+              <span className="hidden h-1 w-1 rounded-full bg-brand-secondary/40 sm:inline-block" />
+              <span>
+                <strong className="font-semibold text-brand-primary">3 unidades</strong> em SP
+              </span>
+            </FadeUp>
+
+            {/* Stats bar — compact */}
+            <FadeUp delay={0.78} immediate>
+              <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-brand-primary/10 pt-7 sm:grid-cols-4">
                 {STATS.map((s) => (
                   <div key={s.label}>
-                    <div className="font-display text-3xl font-bold tracking-tight text-brand-primary md:text-4xl">
+                    <div className="font-display text-2xl font-bold tracking-tight text-brand-primary md:text-3xl">
                       <Counter to={s.numero} suffix={s.sufixo} />
                     </div>
-                    <div className="mt-1 text-xs uppercase tracking-wider text-brand-secondary">
+                    <div className="mt-1 text-[11px] font-medium uppercase tracking-wider text-brand-secondary">
                       {s.label}
                     </div>
                   </div>
@@ -128,10 +146,10 @@ export function Hero() {
           {/* Image */}
           <div className="relative lg:col-span-5">
             <motion.div
-              initial={{ opacity: 0, scale: 0.92, rotate: -2 }}
+              initial={{ opacity: 0, scale: 0.94, rotate: -2 }}
               animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="relative aspect-[4/5] w-full max-w-md mx-auto"
+              transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="relative mx-auto aspect-[4/5] w-full max-w-[420px]"
             >
               <div className="absolute inset-0 -rotate-3 rounded-[2rem] bg-brand-accent" />
               <div className="absolute inset-0 rotate-2 rounded-[2rem] bg-brand-lavender opacity-40" />
@@ -140,7 +158,7 @@ export function Hero() {
                   src="/photos/hero.jpg"
                   alt="Veterinário dermatologista atendendo um pet"
                   fill
-                  sizes="(min-width: 1024px) 480px, 90vw"
+                  sizes="(min-width: 1024px) 420px, 90vw"
                   priority
                   className="object-cover"
                 />
@@ -150,15 +168,15 @@ export function Hero() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2, duration: 0.6 }}
-                className="absolute -bottom-6 -left-6 max-w-[200px] rounded-2xl bg-white p-4 shadow-card sm:-left-10"
+                transition={{ delay: 0.9, duration: 0.5 }}
+                className="absolute -bottom-6 -left-4 max-w-[200px] rounded-2xl bg-white p-3.5 shadow-card sm:-left-8"
               >
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent/15">
                     <Sparkles className="size-5 text-brand-accent" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-brand-secondary">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-brand-secondary">
                       Resultado
                     </p>
                     <p className="text-sm font-bold text-brand-primary">em até 24h</p>
@@ -170,8 +188,8 @@ export function Hero() {
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.4, duration: 0.5, type: "spring" }}
-                className="absolute -top-4 -right-4 flex h-20 w-20 items-center justify-center rounded-full bg-brand-primary text-center text-[10px] font-bold uppercase leading-tight tracking-wider text-white shadow-card"
+                transition={{ delay: 1.1, duration: 0.4, type: "spring" }}
+                className="absolute -right-3 -top-3 flex h-16 w-16 items-center justify-center rounded-full bg-brand-primary text-center text-[9px] font-bold uppercase leading-tight tracking-wider text-white shadow-card sm:-right-4 sm:-top-4 sm:h-20 sm:w-20 sm:text-[10px]"
               >
                 CRMV<br />SP
               </motion.div>

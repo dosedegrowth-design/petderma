@@ -40,7 +40,7 @@ const ITEMS = [
 
 export function Diferenciais() {
   return (
-    <section className="relative overflow-hidden bg-brand-cream py-24 md:py-32">
+    <section className="relative overflow-hidden bg-brand-cream py-20 md:py-24">
       <Container size="lg">
         <FadeUp className="max-w-3xl">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
@@ -58,7 +58,7 @@ export function Diferenciais() {
 
         <Stagger
           staggerDelay={0.1}
-          className="mt-16 grid gap-6 sm:grid-cols-2"
+          className="mt-12 grid gap-6 sm:grid-cols-2"
         >
           {ITEMS.map((item) => (
             <motion.div key={item.titulo} variants={staggerItem}>
