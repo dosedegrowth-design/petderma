@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE, UNIDADES } from "@/lib/constants";
 import { SERVICOS_DETAIL } from "@/lib/services-data";
+import { POSTS } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE.url}/equipe`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE.url}/servicos`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE.url}/unidades`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE.url}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE.url}/contato`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
   ];
 
@@ -27,5 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...base, ...servicosPages, ...unidadesPages];
+  const blogPages: MetadataRoute.Sitemap = POSTS.map((p) => ({
+    url: `${SITE.url}/blog/${p.slug}`,
+    lastModified: new Date(p.updatedAt ?? p.publishedAt),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...base, ...servicosPages, ...unidadesPages, ...blogPages];
 }

@@ -8,6 +8,7 @@ import { NossoEspaco } from "@/components/home/NossoEspaco";
 import { Equipe } from "@/components/home/Equipe";
 import { Depoimentos } from "@/components/home/Depoimentos";
 import { Unidades } from "@/components/home/Unidades";
+import { BlogSection } from "@/components/home/BlogSection";
 import { FAQ } from "@/components/home/FAQ";
 import { CTAFinal } from "@/components/home/CTAFinal";
 
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Equipe />
       <Depoimentos />
       <Unidades />
+      <BlogSection />
       <FAQ />
       <CTAFinal />
     </>
