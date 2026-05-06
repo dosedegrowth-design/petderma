@@ -105,7 +105,7 @@ export function Hero() {
                 </WhatsAppCTA>
               </Magnetic>
               <Button asChild size="lg" variant="ghost">
-                <Link href="/casos">
+                <Link href="#casos">
                   Ver casos resolvidos
                   <ArrowRight className="size-4" />
                 </Link>

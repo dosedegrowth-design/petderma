@@ -26,15 +26,15 @@ export function Header() {
             : "bg-transparent"
         )}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
           <Link href="/" className="relative flex items-center gap-2 transition-transform hover:scale-105">
             <Image
               src="/brand/logo.png"
               alt={SITE.name}
-              width={140}
-              height={48}
+              width={220}
+              height={75}
               priority
-              className="h-10 w-auto"
+              className="h-14 w-auto md:h-16"
             />
           </Link>
 

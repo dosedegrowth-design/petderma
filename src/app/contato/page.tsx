@@ -83,33 +83,36 @@ export default function ContatoPage() {
                           </div>
                         </div>
 
-                        <div className="mt-3 flex flex-wrap gap-2">
+                        <div className="mt-3 space-y-2">
                           <WhatsAppCTA
                             source={`contato-sidebar-${u.slug}`}
                             unidade={u.slug}
                             size="sm"
                             variant="primary"
+                            className="w-full"
                           >
-                            WhatsApp
+                            Falar pelo WhatsApp
                           </WhatsAppCTA>
-                          <a
-                            href={`tel:+${u.telefone}`}
-                            className="inline-flex h-10 items-center gap-1.5 rounded-pill border border-white/20 px-4 text-xs font-semibold text-white transition-all hover:border-brand-accent hover:bg-white/5"
-                          >
-                            <Phone className="size-3.5" />
-                            {u.telefoneDisplay}
-                          </a>
-                          <a
-                            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                              `${u.endereco}, ${u.cidade}`
-                            )}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex h-10 items-center gap-1.5 rounded-pill border border-white/20 px-4 text-xs font-semibold text-white transition-all hover:border-brand-accent hover:bg-white/5"
-                          >
-                            <Navigation className="size-3.5" />
-                            Rota
-                          </a>
+                          <div className="grid grid-cols-2 gap-2">
+                            <a
+                              href={`tel:+${u.telefone}`}
+                              className="inline-flex h-10 items-center justify-center gap-1.5 rounded-pill border border-white/20 px-3 text-xs font-semibold text-white transition-all hover:border-brand-accent hover:bg-white/5"
+                            >
+                              <Phone className="size-3.5" />
+                              Ligar
+                            </a>
+                            <a
+                              href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                                `${u.endereco}, ${u.cidade}`
+                              )}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex h-10 items-center justify-center gap-1.5 rounded-pill border border-white/20 px-3 text-xs font-semibold text-white transition-all hover:border-brand-accent hover:bg-white/5"
+                            >
+                              <Navigation className="size-3.5" />
+                              Traçar rota
+                            </a>
+                          </div>
                         </div>
                       </div>
                     ))}

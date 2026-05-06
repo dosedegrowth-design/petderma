@@ -77,7 +77,6 @@ export function Footer() {
             <ul className="mt-6 space-y-3 text-sm text-white/70">
               <li><Link href="/sobre" className="hover:text-white">Sobre</Link></li>
               <li><Link href="/servicos" className="hover:text-white">Serviços</Link></li>
-              <li><Link href="/casos" className="hover:text-white">Casos resolvidos</Link></li>
               <li><Link href="/unidades" className="hover:text-white">Unidades</Link></li>
               <li><Link href="/equipe" className="hover:text-white">Equipe</Link></li>
               <li><Link href="/contato" className="hover:text-white">Contato</Link></li>

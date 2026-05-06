@@ -335,7 +335,7 @@ export default async function ServicoPage({
                 </WhatsAppCTA>
               </Magnetic>
               <Button asChild size="lg" variant="ghost">
-                <Link href="/casos">Ver casos resolvidos</Link>
+                <Link href="/#casos">Ver casos resolvidos</Link>
               </Button>
             </div>
           </FadeUp>
