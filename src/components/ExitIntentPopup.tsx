@@ -80,15 +80,15 @@ export function ExitIntentPopup() {
               <X className="size-5" />
             </button>
 
-            <div className="relative h-36 w-full overflow-hidden sm:h-44">
+            <div className="relative h-44 w-full overflow-hidden sm:h-52">
               <Image
-                src="/photos/girl-puppy.png"
-                alt="Cuidando do seu pet"
+                src="/photos/hero.jpg"
+                alt="Especialista cuidando de um pet na PetDerma"
                 fill
                 sizes="512px"
-                className="object-cover object-center"
+                className="object-cover [object-position:center_35%]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/15 to-transparent" />
             </div>
 
             <div className="px-7 pb-7 pt-2 sm:px-8 sm:pb-8">
