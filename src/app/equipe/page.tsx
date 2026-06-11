@@ -21,6 +21,18 @@ const MARCOS = [
   { icon: Calendar, ano: "Hoje", text: "+3.500 pets tratados em 3 unidades em SP" },
 ];
 
+const EQUIPE = [
+  { nome: "Dr. Douglas Bessa", cargo: "CEO · Médico Veterinário", foto: "/photos/equipe/douglas-bessa.png" },
+  { nome: "Dra. Annie Bastos", cargo: "Médica Veterinária", foto: "/photos/equipe/annie-bastos.png" },
+  { nome: "Dra. Daniella Andrade", cargo: "Médica Veterinária", foto: "/photos/equipe/daniella-andrade.png" },
+  { nome: "Dra. Gisele Magalhães", cargo: "Médica Veterinária", foto: "/photos/equipe/gisele-magalhaes.png" },
+  { nome: "Dra. Victoria Basqueira", cargo: "Médica Veterinária", foto: "/photos/equipe/victoria-basqueira.png" },
+  { nome: "Dra. Tatielly Oliveira", cargo: "Médica Veterinária", foto: "/photos/equipe/tatielly-oliveira.png" },
+  { nome: "Dra. Nicole Melle", cargo: "Médica Veterinária", foto: "/photos/equipe/nicole-melle.png" },
+  { nome: "Lucas Campanatti", cargo: "Atendimento Digital", foto: "/photos/equipe/lucas-campanatti.png" },
+  { nome: "Elicton Abílio", cargo: "Recepcionista · Campo Belo", foto: "/photos/equipe/elicton-abilio.png" },
+];
+
 const VALORES = [
   {
     icon: Heart,
@@ -123,6 +135,44 @@ export default function EquipePage() {
               </FadeUp>
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* Time / especialistas */}
+      <section className="bg-brand-violet-soft/40 py-16 md:py-20">
+        <Container size="lg">
+          <FadeUp className="mb-12 max-w-3xl text-center lg:text-left">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent">
+              Nossos especialistas
+            </span>
+            <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-brand-primary md:text-4xl">
+              Conheça quem cuida da pele do seu pet
+            </h2>
+          </FadeUp>
+
+          <Stagger staggerDelay={0.06} className="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+            {EQUIPE.map((m) => (
+              <FadeUp key={m.nome}>
+                <div className="group overflow-hidden rounded-[1.5rem] bg-white shadow-soft ring-1 ring-brand-primary/5 transition-all duration-500 hover:-translate-y-1 hover:shadow-card">
+                  <div className="relative aspect-square w-full overflow-hidden">
+                    <Image
+                      src={m.foto}
+                      alt={m.nome}
+                      fill
+                      sizes="(min-width: 1024px) 260px, 45vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-4 text-center">
+                    <h3 className="font-display text-base font-bold leading-tight tracking-tight text-brand-primary">
+                      {m.nome}
+                    </h3>
+                    <p className="mt-1 text-[13px] text-brand-secondary">{m.cargo}</p>
+                  </div>
+                </div>
+              </FadeUp>
+            ))}
+          </Stagger>
         </Container>
       </section>
 
