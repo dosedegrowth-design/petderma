@@ -58,9 +58,9 @@ export default function EquipePage() {
         <Container size="lg">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <FadeUp className="flex justify-center lg:col-span-5 lg:justify-start">
-              <div className="relative">
+              <div className="relative w-full max-w-md">
                 <div className="absolute -left-4 -top-4 h-full w-full rounded-[2rem] bg-brand-accent" />
-                <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] shadow-float">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] shadow-float">
                   <Image
                     src="/photos/equipe.jpg"
                     alt="Equipe PetDerma"
