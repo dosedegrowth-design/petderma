@@ -8,6 +8,7 @@ import { ScrollProgress } from "@/components/motion/ScrollProgress";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyWhatsApp } from "@/components/StickyWhatsApp";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { SITE, UNIDADES } from "@/lib/constants";
 
 const archivo = Archivo({
@@ -114,6 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <StickyWhatsApp />
+        <ExitIntentPopup />
         <Analytics />
         <SpeedInsights />
         {/* Microsoft Clarity */}
