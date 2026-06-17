@@ -27,6 +27,7 @@ export async function generateMetadata({
   return {
     title: `Unidade ${unidade.nome} — Dermatologia Veterinária em ${unidade.cidade}`,
     description: `Clínica PetDerma em ${unidade.bairro}, ${unidade.cidade}. ${unidade.endereco}. Atendimento dermatológico especializado para cães e gatos.`,
+    alternates: { canonical: `/unidades/${unidade.slug}/` },
   };
 }
 

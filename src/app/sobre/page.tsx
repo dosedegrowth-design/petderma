@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/Button";
 import { STATS } from "@/lib/constants";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/sobre/" },
   title: "Sobre a PetDerma — Nossa História e Missão",
   description:
     "Há mais de 12 anos cuidamos da pele e do bem-estar de cães e gatos em São Paulo. Conheça a história, missão e valores da PetDerma.",

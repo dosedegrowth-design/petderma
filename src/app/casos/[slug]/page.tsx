@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${caso.condicao} — Caso clínico | PetDerma`,
     description: caso.resumo,
+    alternates: { canonical: `/casos/${caso.slug}/` },
     openGraph: { images: [{ url: caso.fotoAntesDepois || caso.fotoCard }] },
   };
 }

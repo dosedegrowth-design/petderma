@@ -9,6 +9,7 @@ import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { Magnetic } from "@/components/motion/Magnetic";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/equipe/" },
   title: "Equipe PetDerma — Dermatologia Veterinária Especializada",
   description:
     "Conheça a equipe PetDerma: médicos veterinários dermatologistas, técnicos especializados e atendentes treinados para o melhor cuidado dermatológico em SP.",

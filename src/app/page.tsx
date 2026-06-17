@@ -12,6 +12,8 @@ import { BlogSection } from "@/components/home/BlogSection";
 import { FAQ } from "@/components/home/FAQ";
 import { CTAFinal } from "@/components/home/CTAFinal";
 
+export const metadata = { alternates: { canonical: "/" } };
+
 export default function HomePage() {
   return (
     <>

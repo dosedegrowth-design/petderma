@@ -9,6 +9,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { UNIDADES, SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contato/" },
   title: "Contato — Agende sua consulta",
   description:
     "Entre em contato com a PetDerma. Formulário, WhatsApp e telefones das 3 unidades em SP. Atendimento Seg-Sex 8h às 18h, Sáb 8h às 17h.",

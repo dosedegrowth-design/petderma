@@ -9,6 +9,7 @@ import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { UNIDADES } from "@/lib/constants";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/unidades/" },
   title: "Unidades — Dermatologia Veterinária em São Paulo",
   description:
     "Atendemos em 3 unidades estratégicas: Campo Belo, Tatuapé e São José dos Campos. Encontre a clínica PetDerma mais próxima de você.",

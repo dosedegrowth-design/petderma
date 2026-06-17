@@ -28,6 +28,7 @@ export async function generateMetadata({
   return {
     title: `${servico.nome} — Dermatologia Veterinária em SP`,
     description: servico.resumo,
+    alternates: { canonical: `/servicos/${servico.slug}/` },
   };
 }
 

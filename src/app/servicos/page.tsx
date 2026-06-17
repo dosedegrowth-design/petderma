@@ -11,6 +11,7 @@ import { Magnetic } from "@/components/motion/Magnetic";
 import { SERVICOS_BY_CATEGORIA, CATEGORIAS_INFO } from "@/lib/services-data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/servicos/" },
   title: "Serviços de Dermatologia Veterinária — 14 Procedimentos Especializados",
   description:
     "Conheça os 14 serviços da PetDerma: consulta dermatológica, citologia, raspado, otoendoscopia, crioterapia e tratamento de condições complexas em São Paulo.",
