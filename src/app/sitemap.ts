@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { SITE, UNIDADES } from "@/lib/constants";
 import { SERVICOS_DETAIL } from "@/lib/services-data";
-import { POSTS } from "@/lib/blog-data";
+import { POSTS, CATEGORIES } from "@/lib/blog-data";
+import { CASOS } from "@/lib/casos-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -36,5 +37,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...base, ...servicosPages, ...unidadesPages, ...blogPages];
+  const categoriaPages: MetadataRoute.Sitemap = CATEGORIES.map((c) => ({
+    url: `${SITE.url}/blog/categoria/${c.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }));
+
+  const casosPages: MetadataRoute.Sitemap = CASOS.map((c) => ({
+    url: `${SITE.url}/casos/${c.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...base, ...servicosPages, ...unidadesPages, ...blogPages, ...categoriaPages, ...casosPages];
 }

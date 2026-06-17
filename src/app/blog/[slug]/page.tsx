@@ -259,7 +259,7 @@ export default async function BlogPostPage({
                     <span className="text-xs font-bold uppercase tracking-widest text-brand-secondary">
                       Tags:
                     </span>
-                    {post.tags.map((t) => (
+                    {post.tags.slice(0, 8).map((t) => (
                       <span
                         key={t}
                         className="rounded-pill bg-brand-violet-soft px-3 py-1 text-xs font-medium text-brand-primary"
