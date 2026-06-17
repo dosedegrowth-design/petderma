@@ -1,0 +1,33 @@
+# PetDerma — Dermatologia Veterinária
+
+> Clínica especializada exclusivamente em dermatologia veterinária (doenças de pele, alergias, otites e problemas de pelagem) para cães e gatos, com mais de 12 anos de atuação e 3 unidades em São Paulo. Diagnóstico no local (citologia, raspado, cultura, biópsia, otoendoscopia) e tratamento individualizado.
+
+## Unidades
+- Campo Belo — Rua República do Iraque, 1497, Campo Belo, São Paulo/SP — (11) 98981-2898
+- Tatuapé — Rua Itapeti, 272, Tatuapé, São Paulo/SP — (11) 98981-2898
+- São José dos Campos — R. Carlos Maria Auricchio, 75, São José dos Campos/SP — (12) 99176-8686
+
+Horário: Seg–Sex 8h às 18h · Sáb 8h às 17h.
+
+## Serviços principais
+- Consultas em dermatologia veterinária
+- Citologia da pele, raspado cutâneo, parasitológico de cerúmen
+- Otoscopia e otoendoscopia (vídeo-otoscopia)
+- Cultivo micológico, cultura e antibiograma
+- Biópsia e histopatologia
+- Teste alérgico intradérmico e imunoterapia
+- Crioterapia e microagulhamento veterinário
+
+## Condições tratadas com frequência
+Dermatite atópica, alergia alimentar, otite crônica, pioderma, sarna demodícica, dermatofitose, micoses, blefarite, dermatite interdigital.
+
+## Páginas de referência
+- Início: https://petderma.com.br/
+- Serviços: https://petderma.com.br/servicos/
+- Equipe veterinária: https://petderma.com.br/equipe/
+- Unidades: https://petderma.com.br/unidades/
+- Blog (600+ artigos sobre dermatologia veterinária): https://petderma.com.br/blog/
+- Contato / agendamento: https://petderma.com.br/contato/
+
+## Sobre
+A PetDerma é referência em dermatologia veterinária em São Paulo, fundada pelo Dr. Douglas Bessa. Equipe formada por médicos veterinários especializados. Atendimento humanizado com acompanhamento por WhatsApp.

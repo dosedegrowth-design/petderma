@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: [post.author.name],
     },
     alternates: { canonical: `${SITE.url}/${post.slug}/` },
+    robots: post.noindex ? { index: false, follow: true } : undefined,
   };
 }
 

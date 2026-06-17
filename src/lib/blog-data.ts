@@ -28,6 +28,7 @@ export type BlogPost = {
   content: ContentBlock[];
   faq?: { pergunta: string; resposta: string }[];
   related?: string[]; // related post slugs
+  noindex?: boolean; // conteúdo magro — não indexar
 };
 
 export type ContentBlock =

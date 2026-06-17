@@ -7,6 +7,7 @@ import { FadeUp } from "@/components/motion/FadeUp";
 import { Stagger } from "@/components/motion/Stagger";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { Magnetic } from "@/components/motion/Magnetic";
+import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/equipe/" },
@@ -220,6 +221,22 @@ export default function EquipePage() {
           </FadeUp>
         </Container>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": EQUIPE.map((m) => ({
+              "@type": "Person",
+              name: m.nome.replace(/^Dr[a]?\.\s*/, ""),
+              jobTitle: m.cargo,
+              image: `${SITE.url}${m.foto}`,
+              worksFor: { "@type": "Organization", name: SITE.fullName, url: SITE.url },
+            })),
+          }),
+        }}
+      />
     </>
   );
 }

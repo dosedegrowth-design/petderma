@@ -62,11 +62,40 @@ export const viewport: Viewport = {
 
 const veterinaryCareSchema = {
   "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE.url}/#organization`,
+      name: SITE.fullName,
+      url: SITE.url,
+      logo: { "@type": "ImageObject", url: `${SITE.url}/brand/logo.png` },
+      image: `${SITE.url}/photos/hero.jpg`,
+      description: SITE.description,
+      sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.linkedin],
+      contactPoint: UNIDADES.map((u) => ({
+        "@type": "ContactPoint",
+        telephone: `+${u.telefone}`,
+        contactType: "reservations",
+        areaServed: "BR",
+        availableLanguage: "Portuguese",
+      })),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      inLanguage: "pt-BR",
+      publisher: { "@id": `${SITE.url}/#organization` },
+    },
+    {
   "@type": "VeterinaryCare",
+  "@id": `${SITE.url}/#clinic`,
   name: SITE.name,
   description: SITE.description,
   url: SITE.url,
   image: `${SITE.url}/photos/hero.jpg`,
+  logo: `${SITE.url}/brand/logo.png`,
   priceRange: "$$",
   medicalSpecialty: "Dermatology",
   sameAs: [SITE.social.instagram, SITE.social.facebook, SITE.social.linkedin],
@@ -98,6 +127,8 @@ const veterinaryCareSchema = {
       },
     ],
   })),
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
