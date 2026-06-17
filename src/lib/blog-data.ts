@@ -1,3 +1,4 @@
+import { POSTS_MIGRADOS } from "./blog-migrados";
 export type BlogCategory =
   | "alergias"
   | "otologia"
@@ -50,6 +51,7 @@ export const CATEGORIES: { slug: BlogCategory; nome: string; descricao: string; 
 ];
 
 export const POSTS: BlogPost[] = [
+  ...POSTS_MIGRADOS,
   // ============ POST 1 ============
   {
     slug: "dermatite-atopica-em-caes-guia-completo",
