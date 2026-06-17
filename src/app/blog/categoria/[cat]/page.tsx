@@ -89,7 +89,7 @@ export default async function CategoriaPage({ params }: { params: Promise<{ cat:
               {posts.map((post) => (
                 <Link
                   key={post.slug}
-                  href={`/blog/${post.slug}`}
+                  href={`/${post.slug}`}
                   className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-soft ring-1 ring-brand-primary/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-card"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">

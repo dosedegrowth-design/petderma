@@ -71,7 +71,7 @@ export default function BlogPage() {
           <Container size="lg">
             <FadeUp>
               <Link
-                href={`/blog/${featured.slug}`}
+                href={`/${featured.slug}`}
                 className="group block overflow-hidden rounded-[2rem] bg-white shadow-card ring-1 ring-brand-primary/5 transition-all hover:shadow-float"
               >
                 <div className="grid lg:grid-cols-12">
@@ -164,7 +164,7 @@ function BlogCard({ post }: { post: (typeof POSTS)[number] }) {
   const cat = CATEGORIES.find((c) => c.slug === post.category);
   return (
     <Link
-      href={`/blog/${post.slug}`}
+      href={`/${post.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-soft ring-1 ring-brand-primary/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-card"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
