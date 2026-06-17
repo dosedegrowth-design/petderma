@@ -31,8 +31,8 @@ export function Casos() {
         </div>
 
         <Stagger
-          staggerDelay={0.1}
-          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          staggerDelay={0.08}
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {CASOS.map((caso) => (
             <Link
@@ -53,7 +53,7 @@ export function Casos() {
                 {/* Badge */}
                 <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-pill bg-white/95 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-brand-primary backdrop-blur-sm">
                   <span className="h-1.5 w-1.5 rounded-full bg-brand-accent" />
-                  Tratado em {caso.tempo}
+                  {caso.tempo ? `Tratado em ${caso.tempo}` : "Antes e depois"}
                 </div>
 
                 {/* Seta hover */}
@@ -64,7 +64,9 @@ export function Casos() {
                 {/* Bottom info */}
                 <div className="absolute inset-x-4 bottom-4 text-white">
                   <h3 className="font-display text-xl font-bold leading-tight">{caso.condicao}</h3>
-                  <p className="mt-1 text-sm text-white/80">{caso.pet} — {caso.raca}</p>
+                  <p className="mt-1 line-clamp-2 text-sm text-white/80">
+                    {[caso.pet, caso.raca].filter(Boolean).join(" — ") || caso.resumo}
+                  </p>
                   <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     Ver o caso completo
                   </span>

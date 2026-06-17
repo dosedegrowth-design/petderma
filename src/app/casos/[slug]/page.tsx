@@ -20,120 +20,86 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const caso = getCaso(slug);
   if (!caso) return { title: "Caso não encontrado" };
   return {
-    title: `${caso.condicao} — ${caso.pet} (${caso.raca}) | Casos PetDerma`,
+    title: `${caso.condicao} — Caso clínico | PetDerma`,
     description: caso.resumo,
-    openGraph: { images: [{ url: caso.fotoHero || caso.fotoCard }] },
+    openGraph: { images: [{ url: caso.fotoAntesDepois || caso.fotoCard }] },
   };
 }
-
-const BLOCOS: { campo: keyof NonNullable<ReturnType<typeof getCaso>>; titulo: string }[] = [
-  { campo: "queixa", titulo: "A queixa" },
-  { campo: "diagnostico", titulo: "O diagnóstico" },
-  { campo: "tratamento", titulo: "O tratamento" },
-  { campo: "resultado", titulo: "O resultado" },
-];
 
 export default async function CasoPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const caso = getCaso(slug);
   if (!caso) notFound();
 
-  const temDetalhe = BLOCOS.some((b) => caso[b.campo]);
+  const ficha = [
+    ["Condição", caso.condicao],
+    ...(caso.pet ? [["Pet", caso.pet] as [string, string]] : []),
+    ...(caso.raca ? [["Raça", caso.raca] as [string, string]] : []),
+    ...(caso.tempo ? [["Tempo de tratamento", caso.tempo] as [string, string]] : []),
+    ...(caso.unidade ? [["Unidade", caso.unidade] as [string, string]] : []),
+    ...(caso.profissional ? [["Responsável", caso.profissional] as [string, string]] : []),
+  ];
 
   return (
     <>
       <PageHero
         eyebrow="Caso resolvido"
-        title={
-          <>
-            {caso.condicao} <span className="text-brand-accent">— {caso.pet}</span>
-          </>
-        }
+        title={<>{caso.condicao}</>}
         description={caso.resumo}
         crumbs={[{ label: "Início", href: "/" }, { label: "Casos", href: "/#casos" }, { label: caso.condicao }]}
       />
 
       <section className="py-12 md:py-16">
         <Container size="default">
-          {/* Ficha + imagem */}
+          {/* Antes e depois + ficha */}
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             <FadeUp>
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] shadow-float">
-                <Image
-                  src={caso.fotoHero || caso.fotoCard}
-                  alt={`${caso.pet}, ${caso.raca} — ${caso.condicao}`}
-                  fill
-                  sizes="(min-width: 1024px) 560px, 90vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-pill bg-white/95 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider text-brand-primary backdrop-blur-sm">
-                  <span className="h-1.5 w-1.5 rounded-full bg-brand-accent" />
-                  Tratado em {caso.tempo}
+              <figure className="overflow-hidden rounded-[2rem] shadow-float">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src={caso.fotoAntesDepois || caso.fotoCard}
+                    alt={`Antes e depois — ${caso.condicao}`}
+                    fill
+                    sizes="(min-width: 1024px) 560px, 90vw"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
-              </div>
+                <figcaption className="bg-white px-4 py-2.5 text-center text-sm font-medium text-brand-secondary">
+                  Antes e depois do tratamento
+                </figcaption>
+              </figure>
             </FadeUp>
 
             <FadeUp delay={0.1} className="flex flex-col justify-center">
-              <dl className="grid grid-cols-2 gap-4">
-                {[
-                  ["Pet", caso.pet],
-                  ["Raça", caso.raca],
-                  ["Condição", caso.condicao],
-                  ["Tempo de tratamento", caso.tempo],
-                  ...(caso.unidade ? [["Unidade", caso.unidade] as [string, string]] : []),
-                  ...(caso.profissional ? [["Responsável", caso.profissional] as [string, string]] : []),
-                ].map(([k, v]) => (
+              {caso.tempo && (
+                <span className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-pill bg-brand-accent/15 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-accent">
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-accent" />
+                  Tratado em {caso.tempo}
+                </span>
+              )}
+              <dl className="grid grid-cols-2 gap-3">
+                {ficha.map(([k, v]) => (
                   <div key={k} className="rounded-2xl bg-brand-violet-soft/50 p-4">
                     <dt className="text-xs font-semibold uppercase tracking-wider text-brand-accent">{k}</dt>
-                    <dd className="mt-1 font-display text-lg font-bold text-brand-primary">{v}</dd>
+                    <dd className="mt-1 font-display text-base font-bold text-brand-primary">{v}</dd>
                   </div>
                 ))}
               </dl>
-              <p className="mt-6 text-[17px] leading-relaxed text-brand-secondary">{caso.resumo}</p>
             </FadeUp>
           </div>
 
-          {/* Blocos do contexto */}
-          {temDetalhe && (
-            <div className="mx-auto mt-14 max-w-3xl space-y-10">
-              {BLOCOS.map((b) =>
-                caso[b.campo] ? (
-                  <FadeUp key={b.campo}>
-                    <h2 className="font-display text-2xl font-bold tracking-tight text-brand-primary">{b.titulo}</h2>
-                    <p className="mt-3 whitespace-pre-line text-[17px] leading-relaxed text-brand-secondary">
-                      {caso[b.campo] as string}
-                    </p>
-                  </FadeUp>
-                ) : null,
-              )}
-            </div>
-          )}
-
-          {/* Galeria */}
-          {caso.galeria && caso.galeria.length > 0 && (
-            <div className="mx-auto mt-14 max-w-4xl">
-              <h2 className="mb-6 text-center font-display text-2xl font-bold tracking-tight text-brand-primary">
-                Antes e depois
-              </h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {caso.galeria.map((img, i) => (
-                  <FadeUp key={i}>
-                    <figure className="overflow-hidden rounded-[1.5rem] shadow-soft">
-                      <div className="relative aspect-[4/3] w-full">
-                        <Image src={img.src} alt={img.legenda || caso.condicao} fill sizes="540px" className="object-cover" />
-                      </div>
-                      {img.legenda && (
-                        <figcaption className="bg-white px-4 py-2.5 text-center text-sm text-brand-secondary">
-                          {img.legenda}
-                        </figcaption>
-                      )}
-                    </figure>
-                  </FadeUp>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Corpo */}
+          <div className="mx-auto mt-14 max-w-3xl space-y-5">
+            <FadeUp>
+              <h2 className="font-display text-2xl font-bold tracking-tight text-brand-primary">Sobre o caso</h2>
+            </FadeUp>
+            {caso.texto.map((p, i) => (
+              <FadeUp key={i} delay={i * 0.04}>
+                <p className="text-[17px] leading-relaxed text-brand-secondary">{p}</p>
+              </FadeUp>
+            ))}
+          </div>
 
           {/* Depoimento */}
           {caso.depoimento && (
