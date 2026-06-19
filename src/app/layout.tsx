@@ -153,6 +153,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="ms-clarity" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","TODO_CLARITY_ID");`}
         </Script>
+        {/* Chat (Atendimento) */}
+        <Script id="chatwoot-widget" strategy="lazyOnload">
+          {`(function(d,t){var BASE_URL="https://develop.aifocus.dev";var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src=BASE_URL+"/packs/js/sdk.js";g.async=true;s.parentNode.insertBefore(g,s);g.onload=function(){window.chatwootSDK.run({websiteToken:'UqJEud6UNKZgzF95Y6M7U9ax',baseUrl:BASE_URL})}})(document,"script");`}
+        </Script>
       </body>
     </html>
   );
